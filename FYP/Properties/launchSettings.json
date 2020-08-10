@@ -1,0 +1,38 @@
+{
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iisExpress": {
+      "applicationUrl": "http://localhost:52137",
+      "sslPort": 44338
+    }
+  },
+  "profiles": {
+    "IIS Express": {
+      "commandName": "IISExpress",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "AZURE_USERNAME": "18015120@myrp.edu.sg",
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    },
+    "FYP": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "AZURE_USERNAME": "18015120@myrp.edu.sg",
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "http://localhost:5000"
+    },
+    "Docker": {
+      "commandName": "Docker",
+      "launchBrowser": true,
+      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}",
+      "environmentVariables": {
+        "AZURE_USERNAME": "18015120@myrp.edu.sg"
+      },
+      "publishAllPorts": true
+    }
+  }
+}

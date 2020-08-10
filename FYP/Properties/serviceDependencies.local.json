@@ -1,0 +1,26 @@
+{
+  "dependencies": {
+    "storage1": {
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroup')]/providers/Microsoft.Storage/storageAccounts/fyp2020",
+      "type": "storage.azure",
+      "connectionId": "HostName=FYP.azure-devices.net;DeviceId=RaspberryPi;ModuleId=Sensor;SharedAccessKey=lNCgj9k9FBQzVEKxUOOchLi/WJnL8ge5wAu7yUkFQmY=",
+      "secretStore": "LocalSecretsFile"
+    },
+    "mssql1": {
+      "type": "mssql.azure",
+      "connectionId": "ProductionConnection",
+      "secretStore": "LocalSecretsFile"
+    },
+    "appInsights1": {
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourcegroups/[parameters('resourceGroup1')]/providers/Microsoft.Insights/components/FYP",
+      "type": "appInsights.azure",
+      "connectionId": "APPINSIGHTS_INSTRUMENTATIONKEY",
+      "secretStore": "LocalSecretsFile"
+    },
+    "mssql2": {
+      "type": "mssql.onprem",
+      "connectionId": "DefaultConnection",
+      "secretStore": "LocalSecretsFile"
+    }
+  }
+}

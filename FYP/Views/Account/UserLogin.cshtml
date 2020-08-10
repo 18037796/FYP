@@ -1,0 +1,54 @@
+﻿@model UserLogin
+@{
+    ViewData["Title"] = "UserLogin";
+}
+
+<form asp-controller="Account"
+      asp-action="UserLogin"
+      method="post">
+
+    <div class=" text-light ">
+        <h2><b>Please Sign In</b></h2>
+    </div>
+
+    <div class="col-sm-5">
+        <div class="form-group row">
+            <label class="control-label col-sm-10 text-light font-weight-bolder" asp-for="UserID">User ID :</label>
+            <input asp-for="UserID" class="form-control" />
+            <span asp-validation-for="UserID" class="text-warning font-weight-bolder"></span>
+        </div>
+
+        <div class="form-group row">
+            <label class="control-label col-sm-10 text-light font-weight-bolder" asp-for="Password">Password :</label>
+            <input asp-for="Password" class="form-control" />
+            <span asp-validation-for="Password" class="text-warning font-weight-bolder"></span>
+        </div>
+
+        <div class="form-group row">
+            <div class="form-check">
+                <input asp-for="RememberMe" class="form-check-input" />
+                <label class="control-label text-light" asp-for="RememberMe">
+                    &nbsp; &nbsp; &nbsp;  Remember Me
+                </label>
+            </div>
+        </div>
+
+        @if (ViewData["Message"] != null)
+        {
+            <div class="form-group row">
+                <div class="alert alert-@ViewData["MsgType"]">
+                    <text>@ViewData["Message"]</text>
+                </div>
+            </div>
+        }
+
+        <div class="form-group row">
+            <input type="submit" class="btn btn-primary" value="Login" />
+        </div>
+
+    </div>
+
+</form>
+
+
+

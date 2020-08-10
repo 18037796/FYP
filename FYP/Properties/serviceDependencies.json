@@ -1,0 +1,20 @@
+{
+  "dependencies": {
+    "storage1": {
+      "type": "storage",
+      "connectionId": "HostName=FYP.azure-devices.net;DeviceId=RaspberryPi;ModuleId=Sensor;SharedAccessKey=lNCgj9k9FBQzVEKxUOOchLi/WJnL8ge5wAu7yUkFQmY="
+    },
+    "mssql1": {
+      "type": "mssql",
+      "connectionId": "ProductionConnection"
+    },
+    "appInsights1": {
+      "type": "appInsights",
+      "connectionId": "APPINSIGHTS_INSTRUMENTATIONKEY"
+    },
+    "mssql2": {
+      "type": "mssql",
+      "connectionId": "DefaultConnection"
+    }
+  }
+}

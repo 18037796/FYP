@@ -1,0 +1,198 @@
+﻿
+@model UserRegister
+
+@{
+    ViewData["Title"] = "Register";
+}
+
+    <form asp-controller="Account"
+          asp-action="Register"
+          method="post">
+
+        <div class="form-group row">
+            <div class=" text-light ">
+                <h2><b>Register an Account</b></h2>
+            </div>
+
+        </div>
+        <h4 class = "text-light " >If you already have an account with us, please login at the <a asp-controller="Account"
+                       asp-action="UserLogin" class="text-warning">login page</a>.</h4>
+        
+        <fieldset id="account"></fieldset>
+        <fieldset><legend>&nbsp; &nbsp; Your Personal Details</legend></fieldset>
+        <div class="form-group row">
+            <label class="control-label col-sm-10 text-light font-weight-bolder " asp-for="FirstName">First Name :</label>
+            <div class="col-sm-6">
+                <input type="text" asp-for="FirstName" placeholder=" First Name " class="form-control" />
+            </div>
+            <div class="col-sm-3">
+                <span asp-validation-for="FirstName" class="text-warning font-weight-bolder"></span>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="control-label col-sm-10 text-light font-weight-bolder " asp-for="LastName">Last Name :</label>
+            <div class="col-sm-6">
+                <input type="text" asp-for="LastName" placeholder=" Last Name " class="form-control" />
+            </div>
+            <div class="col-sm-3">
+                <span asp-validation-for="LastName" class="text-warning font-weight-bolder"></span>
+            </div>
+        </div>
+
+
+        <div class="form-group row">
+            <label class="control-label col-sm-10 text-light font-weight-bolder" asp-for="Email">Email :</label>
+            <div class="col-sm-6">
+                <input type="text" asp-for="Email" placeholder=" Email" class="form-control" />
+            </div>
+            <div class="col-sm-3">
+                <span asp-validation-for="Email" class="text-warning font-weight-bolder"></span>
+            </div>
+        </div>
+
+
+        <div class="form-group row">
+            <label class="control-label col-sm-10 text-light font-weight-bolder" asp-for="ContactNo">Contact No :</label>
+            <div class="col-sm-4">
+                <input type="text" asp-for="ContactNo" placeholder=" Contact No. " class="form-control" />
+            </div>
+            <div class="col-sm-3">
+                <span asp-validation-for="ContactNo" class="text-warning font-weight-bolder"></span>
+            </div>
+        </div>
+        <br />
+        <fieldset id="account"></fieldset>
+        <fieldset><legend>&nbsp; &nbsp; Your Address </legend></fieldset>
+
+
+        <div class="form-group row">
+            <label class="control-label col-sm-10 text-light font-weight-bolder " asp-for="StreetAddress">Street Address :</label>
+            <div class="col-sm-6">
+                <input type="text" id="streetaddress" asp-for="StreetAddress" placeholder=" Street Address " class="form-control" onkeyup="combineaddress()" />
+            </div>
+            <div class="col-sm-3">
+                <span asp-validation-for="StreetAddress" class="text-warning font-weight-bolder"></span>
+            </div>
+        </div>
+
+
+        <div class="form-group row">
+            <label class="control-label col-sm-10 text-light font-weight-bolder " asp-for="UnitNo">Unit No. :</label>
+            <div class="col-sm-3">
+                <input type="text" id="unitno" asp-for="UnitNo" value=" #" class="form-control" onkeyup="combineaddress()" />
+            </div>
+            <div class="col-sm-3">
+                <span asp-validation-for="UnitNo" class="text-warning font-weight-bolder"></span>
+            </div>
+        </div>
+
+
+        <div class="form-group row">
+            <label class="control-label col-sm-10 text-light font-weight-bolder" asp-for="Postal"> Postal :</label>
+            <div class="col-sm-3">
+                <input type="text" id="postal" asp-for="Postal" value=" Singapore " class="form-control" onkeyup="combineaddress() " />
+            </div>
+            <div class="col-sm-3">
+                <span asp-validation-for="Postal" class="text-warning font-weight-bolder"></span>
+            </div>
+        </div>
+
+
+
+
+
+
+        <div class="form-group row">
+            <label class="control-label col-sm-10 text-light font-weight-bolder"> Residential Address :</label>
+            <div class="col-sm-10">
+                <input type="text" id="address" placeholder=" Residential Address " class="form-control" readonly />
+            </div>
+
+        </div>
+
+
+
+
+
+
+        <div class="form-group row">
+            <label class="control-label col-sm-10 text-light font-weight-bolder"> Region :</label>
+            <div class="col-sm-4 ">
+                <select name="Region" id="Region_id" class="form-control">
+                    <option> --- Please Select --- </option>
+                    <option value="North"> North </option>
+                    <option value="South"> South </option>
+                    <option value="East"> East </option>
+                    <option value="West"> West </option>
+                    <option value="Central"> Central </option>
+                </select>
+            </div>
+        </div>
+        <br />
+        <fieldset><legend>&nbsp; &nbsp; Your Account Details</legend></fieldset>
+
+
+
+
+
+
+        <div class="form-group row">
+            <label class="control-label col-sm-10 text-light font-weight-bolder" asp-for="UserId">User ID :</label>
+            <div class="col-sm-4">
+                <input type="text" asp-for="UserId" class="form-control" />
+            </div>
+            <div class="col-sm-3">
+                <span asp-validation-for="UserId" class="text-warning font-weight-bolder"></span>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="control-label col-sm-10 text-light font-weight-bolder" asp-for="UserPw">Password :</label>
+            <div class="col-sm-4">
+                <input type="password" asp-for="UserPw" class="form-control" />
+            </div>
+            <div class="col-sm-3">
+                <span asp-validation-for="UserPw" class="text-warning font-weight-bolder"></span>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="control-label col-sm-10 text-light font-weight-bolder" asp-for="UserPw2">Confirm :</label>
+            <div class="col-sm-4 ">
+                <input type="password" asp-for="UserPw2" class="form-control" />
+            </div>
+            <div class="col-sm-3">
+                <span asp-validation-for="UserPw2" class="text-warning font-weight-bolder"></span>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-sm-6">
+                <input type="submit" value="Register" class="btn btn-primary" />
+            </div>
+        </div>
+
+        @if (ViewData["Message"] != null)
+        {
+            <div class="form-group row">
+                <div class="alert alert-@ViewData["MsgType"]">
+                    <text>@ViewData["Message"]</text>
+                </div>
+            </div>
+        }
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+
+    </form>
+<script>
+    function combineaddress() {
+        document.getElementById('address').value = document.getElementById('streetaddress').value + document.getElementById( 'unitno').value + document.getElementById('postal').value;
+    }
+
+</script>

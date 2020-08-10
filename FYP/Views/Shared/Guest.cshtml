@@ -1,0 +1,42 @@
+﻿<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-warning border-bottom box-shadow mb-3">
+    <!--Hamburger Menu-->
+
+    <div class="container-fluid">
+        <a class="navbar-brand font-weight-bolder text-danger" asp-area="" asp-controller="Home" asp-action="Index"> <i class="fa fa-fw fa-fire-alt"> </i>Fire Sensor</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+            <ul class="navbar-nav flex-grow-1">
+                <li class="nav-item">
+                    <a class="nav-link text-dark font-weight-bolder " asp-area="" asp-controller="Home" asp-action="Index">&nbsp; <i class="fa fa-fw fa-home"></i> Home </a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link text-dark font-weight-bolder" asp-area="" asp-controller="Home" asp-action="Privacy">&nbsp; <i class="fa fa-fw fa-user-lock"></i>  Privacy Policy  </a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link text-dark font-weight-bolder" asp-area="" asp-controller="Home" asp-action="Statistics">&nbsp; <i class="fa fa-fw fa-calculator"></i>  Statistics  </a>
+                </li>
+                
+
+
+
+            </ul>
+            <ul class="nav navbar-nav navbar-right text-dark font-weight-bolder ">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="fa fa-user-alt  "></i> &nbsp;
+                        Account
+                    </a>
+
+                    <ul class="dropdown-menu">
+                        <li class="nav-item "><a class="nav-link text-dark font-weight-bolder" asp-area="" asp-controller="Account" asp-action="Register">Register</a></li>
+                        <li class="nav-item "><a class="nav-link text-dark font-weight-bolder" asp-area="" asp-controller="Account" asp-action="UserLogin">User Login</a></li>
+
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

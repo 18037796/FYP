@@ -1,0 +1,57 @@
+﻿
+@section MoreScripts {
+    <link href="~/lib/datatables/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <script src="~/lib/datatables/js/jquery.dataTables.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('#JSUserAlert').DataTable({
+                ordering: true,
+                paging: true,
+                searching: true,
+                info: false,
+                lengthChange: false,
+                pageLength: 10
+            });
+        });
+    </script>
+
+}
+
+@model List<UserAlert.Models.UserAlert>
+
+
+@if (TempData["Message"] != null)
+{
+    <div class="alert alert-@TempData["MsgType"]">
+        @TempData["Message"]
+    </div>
+}
+
+<style>
+    .table-hover tr:hover td {
+        color: red;
+        background-color: #ffcc00;
+        font-weight: bolder;
+    }
+
+    td {
+        color: maroon;
+        font-weight: bolder;
+    }
+</style>
+
+<h2 style="color: white">Sensor Data</h2>
+
+<table id="JSUserRegister" class="table table-condensed table-hover">
+    <thead>
+        <tr style="background-color: red">
+            <th scope="col">Log ID</th>
+            <th scope="col">Sensor Name</th>
+            <th scope="col">Status</th>
+        </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+</table>
